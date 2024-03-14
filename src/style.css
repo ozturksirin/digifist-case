@@ -1,0 +1,246 @@
+:root {
+  --font-family-bold: "ITC-bold";
+  --font-family-medium: "Avenir-medium";
+  --font-family-bold: "Avenir-bold";
+
+  --color-text: #000000;
+  --color-subtitle: #666666;
+  --color-link: #000000;
+  --color-price: #000000;
+  --color-product-bg: #ffffff;
+}
+
+@font-face {
+  font-family: var(--font-family-bold);
+  src: url("assets/fonts/ITC Avant Garde Gothic Pro-Bold.otf");
+}
+
+@font-face {
+  font-family: var(--font-family-medium);
+  src: url("assets/fonts/avenir/AvenirLTStd-Book.otf");
+}
+
+@font-face {
+  font-family: var(--font-family-bold);
+  src: url("assets/fonts/avenir/AvenirLTStd-Black.otf");
+}
+
+#body {
+  background-color: var(--color-product-bg);
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.header-left {
+  flex: 1;
+  display: flex;
+  height: 100vh;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.header-right {
+  position: relative;
+  flex: 1;
+  margin-left: 36px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.right-inner {
+  padding-left: 100px;
+}
+
+.title {
+  font-size: 1.95em;
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 40.62px;
+  font-family: var(--font-family-bold);
+}
+
+.sub-title {
+  font-size: 1em;
+  color: var(--color-subtitle);
+  font-weight: 400;
+  line-height: 25.6px;
+  font-family: var(--font-family-medium);
+}
+
+.link {
+  color: var(--color-link);
+  font-size: 1.12em;
+  font-weight: 900;
+  line-height: 17.48px;
+  font-family: var(--font-family-bold);
+}
+
+.products-area {
+  cursor: grabbing;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 40px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.product {
+  padding-left: 30px;
+  flex-shrink: 0;
+}
+
+.product-image {
+  width: 260px;
+  height: 363px;
+  object-fit: cover;
+}
+
+.product-name {
+  font-size: 0.8em;
+  color: var(--color-text);
+  font-weight: 400;
+  line-height: 20.48px;
+  font-family: var(--font-family-medium);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.product-details {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.price {
+  font-size: 0.8em;
+  color: var(--color-price);
+  font-weight: 500;
+  line-height: 20.48px;
+  font-family: var(--font-family-bold);
+  text-align: center;
+}
+
+.product-color {
+  cursor: pointer;
+  border: none;
+  font-size: 1.12em;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+}
+
+.product-color-active {
+  cursor: pointer;
+  border: 1.5px solid var(--color-text);
+}
+
+.arrow-btn {
+  position: absolute;
+  right: 2%;
+  display: block;
+  margin-top: 12%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px;
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 1366px) and (min-width: 600px) {
+  .header-right {
+    margin-top: 10px;
+  }
+  .product-image {
+    width: 164px;
+    height: 188px;
+  }
+  .product-name {
+    font-size: 0.7em;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  .bg-image {
+    object-fit: cover;
+  }
+  .header-right {
+    margin-top: -240px;
+    width: 90%;
+  }
+  .right-inner {
+    padding-left: 0;
+  }
+  .title {
+    font-size: 1.5em;
+    color: #ffffff;
+    line-height: normal;
+  }
+  .sub-title {
+    display: none;
+  }
+  .link {
+    color: #ffffff;
+  }
+
+  .product-image {
+    width: 148px;
+    height: 200px;
+  }
+
+  .arrow-btn {
+    display: none;
+  }
+  .product-details {
+    display: block;
+  }
+  .price {
+    text-align: left;
+  }
+}
+
+@media only screen and (width: 768px) and (height: 1024px) and (orientation: portrait) {
+  .bg-image {
+    object-fit: cover;
+  }
+  .right-inner {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 820px) and (max-height: 1368px) and (orientation: portrait) {
+  .bg-image {
+    object-fit: cover;
+  }
+  .right-inner {
+    padding-left: 0;
+  }
+}
